@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10 mensajes para Ximena 💌</title>
+<style>
+:root{--pink:#e96799;--rose:#b44779;--ink:#5d3850;--cream:#fff8fc;--lilac:#eee8ff}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:radial-gradient(circle at top left,#fff8fc 0,#ffeaf3 45%,#eeeaff 100%)}
+.decor{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.decor span{position:absolute;color:#d58ab0;opacity:.45;animation:twinkle 3s infinite alternate}
+@keyframes twinkle{to{opacity:.9;transform:scale(1.2)}}
+main{width:min(900px,92vw);margin:auto;padding:38px 0 55px;position:relative}
+.hero,.note{background:rgba(255,255,255,.83);border:1px solid #fff;border-radius:26px;box-shadow:0 16px 45px #a65a8518}
+.hero{text-align:center;padding:clamp(22px,5vw,42px);margin-bottom:22px}
+.kicker{text-transform:uppercase;letter-spacing:.16em;font-size:.76rem;font-weight:800;color:#b56b91}
+h1{font-family:Georgia,serif;color:#a83f75;font-size:clamp(2.3rem,8vw,4.4rem);line-height:1.05;margin:13px 0}
+.hero p{max-width:600px;margin:0 auto;line-height:1.7}
+.bigheart{font-size:3rem;margin-bottom:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.envelope{border:1px solid #f3cbdc;background:linear-gradient(145deg,#fff9fc,#fff0f7);border-radius:20px;padding:20px 16px;text-align:center;cursor:pointer;min-height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform .18s,box-shadow .18s}
+.envelope:hover{transform:translateY(-3px);box-shadow:0 10px 24px #bd72951c}
+.envelope .emoji{font-size:2rem}
+.envelope strong{display:block;margin:8px 0;color:#a74678}
+.envelope small{color:#98778b}
+.envelope.open{background:linear-gradient(145deg,#fff,#f3efff);border-color:#d9c9f1}
+.envelope.open small{font-weight:700;color:#8e5591}
+.note{margin-top:18px;padding:clamp(20px,5vw,34px);display:none;line-height:1.85;animation:appear .35s ease}
+.note.show{display:block}
+.note h2{font-family:Georgia,serif;color:#a83f75;margin-top:0}
+.note .signature{text-align:right;color:#a83f75;font-family:Georgia,serif;font-size:1.15rem;margin-top:22px}
+.close{background:#b44779;color:white;border:0;border-radius:999px;padding:11px 18px;font-weight:700;cursor:pointer}
+.footer{text-align:center;font-size:.85rem;color:#96788c;margin-top:20px}
+.heart{position:fixed;bottom:-35px;z-index:9;pointer-events:none;color:#e96799;animation:float 4.5s linear forwards}
+@keyframes float{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+</style>
+</head>
+<body>
+<div class="decor" aria-hidden="true">
+<span style="left:7%;top:12%">✦</span><span style="left:89%;top:18%;animation-delay:1s">♡</span>
+<span style="left:15%;top:78%;animation-delay:1.6s">✧</span><span style="left:83%;top:73%;animation-delay:.4s">✦</span>
+<span style="left:48%;top:5%;animation-delay:2s">♡</span><span style="left:95%;top:48%;animation-delay:1.3s">✧</span>
+</div>
+<main>
+<section class="hero">
+<div class="bigheart">💌</div>
+<div class="kicker">Un regalo hecho especialmente para ti</div>
+<h1>10 mensajes<br>para Ximena</h1>
+<p>Hay palabras que quiero que tengas contigo. Abre cada sobre cuando llegue ese momento. No tienes que abrirlos todos hoy. ❤️</p>
+</section>
+
+<section class="grid" id="grid" aria-label="Sobres de mensajes"></section>
+<section class="note" id="note" aria-live="polite">
+<h2 id="noteTitle"></h2>
+<div id="noteBody"></div>
+<div class="signature">Con mucho cariño,<br>Gabriel ❤️</div>
+<button class="close" id="closeBtn">Cerrar carta</button>
+</section>
+<div class="footer">Hecho con cariño, solo para ti ✨</div>
+</main>
+<script>
+const letters = [
+["💗","Abre cuando me extrañes",`Mi Xime, si estás leyendo esto es porque quizás hoy me extrañas un poquito más de lo normal. Quiero que recuerdes que, aunque estemos lejos, hay alguien que piensa en ti, que se alegra de hablar contigo y que disfruta cada momento que comparte contigo. Ojalá pudiera estar ahí para conversar un rato, jugar algo juntos o simplemente acompañarte. Mientras tanto, te mando un abrazo enorme desde aquí. ❤️`],
+["🌷","Abre cuando estés triste",`Hola, mi Xime. No sé qué habrá pasado hoy, pero quiero recordarte que no todos los días tienen que ser perfectos. Está bien tener días difíciles y tomarte tu tiempo para sentirte mejor. Espero que encuentres algo que te haga sonreír, aunque sea una pequeña cosa. Y recuerda que puedes contar conmigo para escucharte. Te mando mucho cariño.`],
+["🌧️","Abre cuando tengas un mal día",`Mi Xime, quizás hoy las cosas no salieron como esperabas, pero eso no significa que mañana será igual. No dejes que un día complicado te haga olvidar todas las cosas bonitas que hay en tu vida. Descansa, respira y date un momento para ti. Espero que mañana tengas motivos nuevos para sonreír. ¡Tú puedes!`],
+["😂","Abre cuando quieras reírte",`JAJAJA, Ximena, si abriste esto porque necesitas reírte, imagina que estoy intentando hacerte reír con uno de mis chistes malos. Probablemente me dirías que no da risa, pero igual seguiría intentando. Espero que estés sonriendo un poquito ahora. Y si no, queda pendiente que algún día te haga reír en persona.`],
+["🌙","Abre cuando no puedas dormir",`Hola, Xime. ¿Todavía despierta? Espero que estés descansando bien. Si hoy tu mente está llena de pensamientos, intenta dejar todo eso para mañana y darte un momento de tranquilidad. Que Dios cuide de ti esta noche y te regale un descanso bonito. Buenas noches, Ximena.`],
+["❤️","Abre cuando quieras recordar cuánto te quiero",`Quiero que sepas que eres una persona muy especial para mí. Me gusta conocerte cada vez más, escuchar tus ideas, compartir nuestras conversaciones y descubrir todas esas pequeñas cosas que te hacen ser tú. Me alegra mucho que formes parte de mi vida. Gracias por ser Ximena, con tu forma única de ser.`],
+["🎮","Abre cuando quieras jugar conmigo",`¡XIMENAAA! Este mensaje es una invitación oficial a jugar Minecraft conmigo. Podemos construir una casa moderna, explorar, decorar nuestro mundo y hacer todas esas cosas que se nos ocurran. No importa si no hacemos nada extraordinario, lo importante es pasar un buen rato juntos. Y si perdemos todo en supervivencia, pues empezamos de nuevo JAJAJA.`],
+["✨","Abre cuando estés preocupada",`Mi Xime, no sé qué te preocupa en este momento, pero quiero recordarte que no tienes que resolverlo todo de una sola vez. Puedes ir poco a poco, dando un paso a la vez. Espero que encuentres tranquilidad y que Dios te acompañe en lo que estés viviendo. Te mando mucho ánimo y cariño.`],
+["🌸","Abre cuando quieras imaginar nuestro futuro",`A veces me pongo a imaginar todas las cosas que algún día podríamos hacer juntos. Salir a pasear, comer algo rico, jugar Minecraft en la misma habitación, conocer lugares nuevos y compartir momentos sencillos. No necesitamos que todo sea perfecto. Me gustaría que algún día podamos mirar atrás y recordar todas las cosas bonitas que vivimos y construimos juntos.`],
+["🎂","Abre el día de tu cumpleaños",`Mi Xime, ¡feliz cumpleaños! ❤️ Espero que este día esté lleno de sonrisas, cariño y momentos bonitos. Le pido a Dios que te bendiga mucho, que te acompañe en tus sueños y que te regale un año lleno de cosas buenas. Aunque hoy no pueda estar a tu lado, quiero que sientas todo el cariño que te mando desde aquí. Gracias por ser parte de mi vida. Ojalá algún día podamos celebrar tu cumpleaños juntos, con una torta, muchas risas y recuerdos que podamos guardar para siempre. ¡Feliz cumpleaños, Ximena!`]
+];
+const grid=document.getElementById('grid'), note=document.getElementById('note');
+letters.forEach((item,i)=>{
+  const btn=document.createElement('button');
+  btn.className='envelope';btn.type='button';
+  btn.innerHTML=`<span class="emoji">${item[0]}</span><strong>${item[1]}</strong><small>♡ Pulsa para abrir ♡</small>`;
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.envelope').forEach(x=>x.classList.remove('open'));
+    btn.classList.add('open');
+    document.getElementById('noteTitle').textContent=item[1];
+    document.getElementById('noteBody').textContent=item[2];
+    note.classList.add('show');
+    note.scrollIntoView({behavior:'smooth',block:'center'});
+    burst();
+  });
+  grid.appendChild(btn);
+});
+document.getElementById('closeBtn').addEventListener('click',()=>{
+  note.classList.remove('show');
+  grid.scrollIntoView({behavior:'smooth',block:'start'});
+});
+function burst(){
+  for(let i=0;i<12;i++){
+    const h=document.createElement('span');h.className='heart';h.textContent=['♥','♡','✦'][Math.floor(Math.random()*3)];
+    h.style.left=Math.random()*100+'vw';h.style.fontSize=(16+Math.random()*20)+'px';
+    h.style.animationDuration=(3+Math.random()*2)+'s';document.body.appendChild(h);
+    setTimeout(()=>h.remove(),5500);
+  }
+}
+</script>
+</body>
+</html>
